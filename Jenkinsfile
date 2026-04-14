@@ -24,13 +24,13 @@ pipeline{
         }
         stage('Build and tag'){
             steps{
-                sh 'docker build -t Mokshalakshmi/project-1 .'
+                sh 'docker build -t mokshalakshmi/project-1 .'
             }
         }
         stage('Containerisation'){
             steps{
                 sh '''
-                docker run -it -d --name c8 -p 9008:8080 Mokshalakshmi/project-1
+                docker run -it -d --name c8 -p 9008:8080 mokshalakshmi/project-1
                 '''
             }
         }
@@ -45,7 +45,7 @@ pipeline{
         }
          stage('Pushing image to repository'){
             steps{
-                sh 'docker push Mokshalakshmi/project-1'
+                sh 'docker push mokshalakshmi/project-1'
             }
         }
         
