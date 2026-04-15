@@ -30,6 +30,7 @@ pipeline{
         stage('Containerisation'){
             steps{
                 sh '''
+                docker rm -f c8 || true
                 docker run -it -d --name c8 -p 9008:8080 mokshalakshmi/project-1
                 '''
             }
